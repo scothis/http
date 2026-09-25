@@ -43,6 +43,9 @@ make components
 - [`latch-n3`](./components/latch-n3/)
 - [`latch-n4`](./components/latch-n4/)
 - [`latch-n5`](./components/latch-n5/)
+- [`latch-scheme`](./components/latch-scheme/)
+- [`latch-scheme-httpsonly`](./components/latch-scheme-httpsonly/)
+- [`latch-scheme-httpsonly-config`](./components/latch-scheme-httpsonly-config/)
 
 ## Community
 

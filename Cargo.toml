@@ -1,14 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "components/*",
+    "components/*/src/..",
     "crates/*",
-]
-exclude = [
-    "components/gate",
-    "components/latch-method-readonly",
-    "components/latch-method-readonly-config",
-    "components/wit",
 ]
 
 [workspace.dependencies]
