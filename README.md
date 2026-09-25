@@ -18,10 +18,11 @@ A [dev container](https://containers.dev) is available that contains the necessa
 
 Prereqs:
 - a rust toolchain
+- [`jq`](https://jqlang.org)
+- [`static-config`](https://github.com/componentized/static-config)
+- [`wac`](https://github.com/bytecodealliance/wac)
 - [`wasm-tools`](https://github.com/bytecodealliance/wasm-tools)
 - [`wkg`](https://github.com/bytecodealliance/wasm-pkg-tools)
-- [`wac`](https://github.com/bytecodealliance/wac)
-- [`static-config`](https://github.com/componentized/static-config/)
 
 ```sh
 make components
