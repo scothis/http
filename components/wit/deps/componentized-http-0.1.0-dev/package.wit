@@ -96,8 +96,7 @@ interface latch {
   }
 
   variant error-code {
-    http(http-error-code),
-    other(option<string>),
+    latch(string),
   }
 
   authorize: func(operation: operation) -> result<decision, error-code>;

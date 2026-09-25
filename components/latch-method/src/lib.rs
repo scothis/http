@@ -42,9 +42,9 @@ impl MethodLatch {
         match value.as_str() {
             "" | ABSTAINED => Ok(Decision::Abstained),
             DENIED => Ok(Decision::Denied(HttpErrorCode::HttpRequestMethodInvalid)),
-            val => Err(ErrorCode::Other(Some(format!(
+            val => Err(ErrorCode::Latch(format!(
                 "unknown decision value '{val}', expected one of: '{ABSTAINED}', '{DENIED}'"
-            )))),
+            ))),
         }
     }
 }
@@ -65,8 +65,10 @@ impl Latch for MethodLatch {
 impl From<config::Error> for ErrorCode {
     fn from(value: config::Error) -> Self {
         match value {
-            config::Error::Upstream(error) => Self::Other(Some(error)),
-            config::Error::Io(error) => Self::Other(Some(error)),
+            config::Error::Upstream(error) => {
+                Self::Latch(format!("config error: upstream: {error}"))
+            }
+            config::Error::Io(error) => Self::Latch(format!("config error: io: {error}")),
         }
     }
 }
